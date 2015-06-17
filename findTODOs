@@ -1,0 +1,3 @@
+#!/bin/bash
+#find . -type f -iname "*.java" -exec grep --color=auto -iRnHa 'TODO:' '{}' \;
+find . -type f  \( -iname "*.tex" -o -iname "*.java" \)  -exec grep --color=auto -iRnHa 'TODO:' '{}' \;
