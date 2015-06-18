@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# seqcopy
+# copy and search+replace by sequential index
+# Jonas Sjöberg 2015
+# https://github.com/jonasjberg
+
+# Setup a bunch of files with names uppg00 uppg01 uppg03 .. etc.
+# Replace file strings with the sequential index of the file name.
+# For initializing a bunch of files from a "template" file.
+
+
+
+for ((i = 1 ; i <= 10 ; i++)); do
+    # convert 'i' into zero-padded number (01 02 03 .. ) 'i' 
+    printf -v j "%02d" $i
+   
+    # if copying the "template" file succeeds, repace strings in file using sed 
+    if cp -nvi "uppg00.tex" "uppg${j}.tex";
+    then
+        find . -type f -name "uppg${j}.tex" -execdir sed -i "s/Uppgift 0/Uppgift ${i}/g" "{}" \;
+        find . -type f -name "uppg${j}.tex" -execdir sed -i "s/00/#${j}/g" "{}" \;
+    fi
+done
+
