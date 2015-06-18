@@ -1,3 +1,5 @@
-#!/bin/bash
-#find . -type f -iname "*.java" -exec grep --color=auto -iRnHa 'TODO:' '{}' \;
+#!/usr/bin/env bash
+
+# search current folder recursively for files containing TODOs ..
 find . -type f  \( -iname "*.tex" -o -iname "*.java" \)  -exec grep --color=auto -iRnHa 'TODO:' '{}' \;
+
