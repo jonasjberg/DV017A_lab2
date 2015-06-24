@@ -24,18 +24,18 @@
 % TODO: Eventuell beskrivning av #02 funktionalitet.
 
 \subsubsection{Kommentar}
-% NOTERA att (C) använder '\' och inte '/' (division)
 
-%                             int x        int y
-% (initial)                       4            2
-%       (A)   y    =    x++       5            4
-%       (B)   y    =  ++x         6            6 
-%       (C)   y  \*=    x         6            6
-%       (D)   y   +=   (x + 2)    6            36
-%       (E)   y   +=  --x         6            44
-%       (F)   y   +=    x++       5            49
-%       (G)   x    =   -y;        6            54
-%   (final)                      -54           54
+%                                    värde efter uttryck
+% Uttryck        Operation           int x         int y
+% =======================================================
+% (start)                                4             2
+%     (A)        y    =    x++           5             4
+%     (B)        y    =  ++x             6             6
+%     (C)        y   *=    x             6             36
+%     (D)        y   +=   (x + 2)        6             44
+%     (E)        y   +=  --x             5             49
+%     (F)        y   +=    x++           6             54
+%     (G)        x    =   -y;           -54            54
 %
 %
 %
