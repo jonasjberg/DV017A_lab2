@@ -20,25 +20,25 @@
 \end{verbatim}
 
 \subsection{Lösning}
+Lösningen av Uppgift \ref{sec:uppg02} använder en metod
+\texttt{shotResults(String label)} för att skriva ut värdet av variablerna
+\texttt{x} och \texttt{y} efter att varje uttryck beräknas.
+
 \subsubsection{Funktion}
-% TODO: Eventuell beskrivning av #02 funktionalitet.
 
 \subsubsection{Kommentar}
 
-%                                    värde efter uttryck
-% Uttryck        Operation           int x         int y
-% =======================================================
-% (start)                                4             2
-%     (A)        y    =    x++           5             4
-%     (B)        y    =  ++x             6             6
-%     (C)        y   *=    x             6             36
-%     (D)        y   +=   (x + 2)        6             44
-%     (E)        y   +=  --x             5             49
-%     (F)        y   +=    x++           6             54
-%     (G)        x    =   -y;           -54            54
-%
-%
-%
+%                                  |  värde efter uttryck  |
+%  uttryck  |      operation       |  int x      int y     |
+% ==========|======================|=======================|
+% (start)   |                      |      4          2     |
+%     (A)   |    y    =    x++     |      5          4     |
+%     (B)   |    y    =  ++x       |      6          6     |
+%     (C)   |    y   *=    x       |      6          36    |
+%     (D)   |    y   +=   (x + 2)  |      6          44    |
+%     (E)   |    y   +=  --x       |      5          49    |
+%     (F)   |    y   +=    x++     |      6          54    |
+%     (G)   |    x    =   -y;      |     -54         54    |
 %
 
 
@@ -46,7 +46,6 @@
 \inputminted[linenos]{java}{src/Lab2Uppg02.java}
 \caption{Lab2Uppg02.java}
 \label{src:uppg02}
-% TODO: Lägg till källkod för #02.
 
 
 \subsubsection{Skärmdump}
