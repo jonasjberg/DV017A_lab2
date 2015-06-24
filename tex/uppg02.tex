@@ -1,15 +1,45 @@
 \section{Uppgift 2}\label{sec:uppg02}
 
 \subsection{Instruktioner}
-% TODO: Lägg till instruktioner för #02.
+\begin{verbatim}
+2. Vilket värde får variablerna x och y efter det att uttrycket (a-g) beräknats
+   (varje uttryck ska beräknas enskilt). Lös gärna först uppgiften i huvudet
+   (lär man sig mycket på) utan att testa med något program.
+   Följande deklaration finns i programmen:
 
+       int x=4;
+       int y=2;
+
+       a.  y=x++;
+       b.  y=++x;
+       c.  y\*=x;
+       d.  y+=(x+2);
+       e.  y+=--x;
+       f.  y+=x++
+       g.  x=-y;
+\end{verbatim}
 
 \subsection{Lösning}
 \subsubsection{Funktion}
 % TODO: Eventuell beskrivning av #02 funktionalitet.
 
 \subsubsection{Kommentar}
-% TODO: Eventuell kommentar på #02.
+% NOTERA att (C) använder '\' och inte '/' (division)
+
+%                             int x        int y
+% (initial)                       4            2
+%       (A)   y    =    x++       5            4
+%       (B)   y    =  ++x         6            6 
+%       (C)   y  \*=    x         6            6
+%       (D)   y   +=   (x + 2)    6            36
+%       (E)   y   +=  --x         6            44
+%       (F)   y   +=    x++       5            49
+%       (G)   x    =   -y;        6            54
+%   (final)                      -54           54
+%
+%
+%
+%
 
 
 \subsubsection{Källkod}
