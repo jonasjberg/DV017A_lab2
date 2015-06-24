@@ -1,8 +1,10 @@
 /**
- * DV017A :: Grundläggande programmering i Java 860224 Jonas Sjöberg Högskolan i
- * Gävle tel12jsg@student.hig.se
+ * DV017A :: Grundläggande programmering i Java
+ * 860224 Jonas Sjöberg
+ * Högskolan i Gävle
+ * tel12jsg@student.hig.se
  * 
- * Labb #2 Uppgift 1
+ * Labb #2    Uppgift 1
  */
 
 public class Lab2Uppg01
@@ -20,7 +22,7 @@ public class Lab2Uppg01
 
     public static void main(String[] args)
     {
-        @formatter:off  // Avaktivera Eclipse auto-formatering
+        @formatter:off
         UserInputFilter filter = new UserInputFilter();
 
         int sekunder = filter.getPositiveInt(QUERY);
@@ -34,7 +36,7 @@ public class Lab2Uppg01
         System.out.println("            " + minuter + " minuter");
         System.out.println("            " + timmar + (timmar > 1 ? " timmar" : " timme"));
         System.out.println("________________________________________");
-        @formatter:on   // Aktivera Eclipse auto-formatering
+        @formatter:on
     }
 
     /**
