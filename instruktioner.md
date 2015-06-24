@@ -18,7 +18,7 @@ Uppgifter:
 
        a.  y=x++;
        b.  y=++x;
-       c.  y\*=x;
+       c.  y*=x;
        d.  y+=(x+2);
        e.  y+=--x;
        f.  y+=x++
