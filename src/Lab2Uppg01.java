@@ -14,34 +14,45 @@ public class Lab2Uppg01
     private static final int SECONDS_PER_MINUTE = 60;
     private static final int MINUTES_PER_HOUR   = 60;
     private static final int HOURS_PER_DAY      = 24;
-    
-    private static final String QUERY = "Var vänlig ange antal sekunder till deadline för laben: ";
+
+    /* Konstant variabel QUERY skrivs ut då användaren ombeds mata in sekunder. */
+    private static final String QUERY = 
+            "Var vänlig ange antal sekunder att omvandla till minuter och timmar.";
 
     public static void main(String[] args)
     {
         UserInputFilter filter = new UserInputFilter();
-        
+
         int sekunder = filter.getPositiveInt(QUERY);
-        int minuter  = numberOfMinutesForSeconds(sekunder);
-        int timmar   = numberOfHoursForMinutes(minuter);
-        
+        int minuter = numberOfMinutesForSeconds(sekunder);
+        int timmar = numberOfHoursForMinutes(minuter);
+
         System.out.println("________________________________________");
         System.out.println("");
         System.out.println("Tid kvar:");
         System.out.println("            " + sekunder + " sekunder");
         System.out.println("            " + minuter + " minuter");
-        System.out.println("            " + timmar + " timmar");
+        System.out.println("            " + timmar + (timmar > 1 ? " timmar" : " timme"));
         System.out.println("________________________________________");
     }
 
+    /**
+     * Beräknar antal minuter för ett givet antal sekunder.
+     * @param seconds       antal sekunder att beräkna
+     * @return              antal minuter
+     */
     static int numberOfMinutesForSeconds(int seconds)
     {
         return seconds / SECONDS_PER_MINUTE;
     }
 
+    /**
+     * Beräknar antal timmar för ett givet antal minuter.
+     * @param minutes       antal minuter att beräkna
+     * @return              antal timmar
+     */
     static int numberOfHoursForMinutes(int minutes)
     {
         return minutes / MINUTES_PER_HOUR;
     }
-
 }

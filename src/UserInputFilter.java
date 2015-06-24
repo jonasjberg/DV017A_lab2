@@ -22,7 +22,7 @@ public class UserInputFilter
      * @param msg   meddelande vid förfrågan
      * @return      ett positivt heltal
      */
-    public static int getPositiveInt(String msg) {
+    public int getPositiveInt(String msg) {
         @SuppressWarnings("resource")
         Scanner scan = new Scanner(System.in);
 
@@ -43,10 +43,13 @@ public class UserInputFilter
         return vetInt;
     } 
     
+    /**
+     * Skriv ut meddelande till användaren.
+     * @param msg   meddelande att skriva ut
+     */
     private static void queryUser(String msg) {
-            if (msg != null) System.out.print(msg);
+        if (msg != null) System.out.print(msg);
     }
-    
 }
 
 
