@@ -1,5 +1,3 @@
-package main;
-
 /**
  * DV017A :: Grundläggande programmering i Java
  * 860224 Jonas Sjöberg
@@ -8,6 +6,8 @@ package main;
  * 
  * Labb #2    Uppgift 1
  */
+
+package main;
 
 public class Lab2Uppg01
 {
