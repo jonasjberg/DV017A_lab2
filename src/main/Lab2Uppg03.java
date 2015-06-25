@@ -34,10 +34,10 @@ public class Lab2Uppg03
         
         if (B > A) {
             if (C < A) return A;
-            else return B;
+            else       return B;
         } else {
             if (A < B) return B;
-            else return C;
+            else       return C;
         }
     }
     // Skriv in första talet: *7*¬
