@@ -25,7 +25,7 @@ public class Lab2Uppg03
     }
 
     
-    private static int mellerstaTalet(int[] tal)
+    public static int mellerstaTalet(int[] tal)
     {
         int A = tal[0];
         int B = tal[1];
