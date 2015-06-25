@@ -24,7 +24,7 @@ public class Lab2Uppg01
 
     public static void main(String[] args)
     {
-        @formatter:off
+      //@formatter:off
         UserInputFilter filter = new UserInputFilter();
 
         int sekunder = filter.getPositiveInt(QUERY);
@@ -38,7 +38,7 @@ public class Lab2Uppg01
         System.out.println("            " + minuter + " minuter");
         System.out.println("            " + timmar + (timmar > 1 ? " timmar" : " timme"));
         System.out.println("________________________________________");
-        @formatter:on
+      //@formatter:on
     }
 
     /**
