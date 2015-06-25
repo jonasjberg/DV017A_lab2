@@ -26,19 +26,37 @@ public class Lab2Uppg03
     }
 
     
-    public static int mellerstaTalet(int[] tal)
+//    public int mellerstaTalet(int[] tal)
+//    {
+//        int A = tal[0];
+//        int B = tal[1];
+//        int C = tal[2];
+//        System.out.println("A = " + A);
+//        System.out.println("B = " + B);
+//        System.out.println("C = " + C);
+//        
+//        if (B > A) {
+//            System.out.println("B > A");
+//            if (C < A) return A;
+//            else       return B;
+//        } else {
+//            System.out.println("!(B > A)");
+//            if (A < B) return B;
+//            else       return C;
+//        }
+//    }
+    
+    public int mellerstaTalet(int[] tal)
     {
         int A = tal[0];
         int B = tal[1];
         int C = tal[2];
+        System.out.println("A = " + A);
+        System.out.println("B = " + B);
+        System.out.println("C = " + C);
+
         
-        if (B > A) {
-            if (C < A) return A;
-            else       return B;
-        } else {
-            if (A < B) return B;
-            else       return C;
-        }
+
     }
     // Skriv in första talet: *7*¬
     // Skriv in andra talet: *10*¬

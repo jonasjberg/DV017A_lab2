@@ -10,36 +10,69 @@
 package test;
 
 import main.Lab2Uppg03;
+import java.util.Arrays;
+import java.util.Collection;
+import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+import org.junit.runner.RunWith;
 
+@RunWith(Parameterized.class)
 public class Lab2Uppg03Test
 {
-    private static int OSORTERADE_TAL[];
-    Lab2Uppg03  uppg03;
-    
+    private int TEST_DATA[]; // Uppsättning siffror att använda vid test
+    private int expected;    // "Rätt svar"
+    private int actual;      // Faktiskt svar vid testkörning
+    private Lab2Uppg03 uppg03;      // Objekt under test
+
     @Before
     public void setUp() throws Exception
     {
-        OSORTERADE_TAL = new int[3];
-        OSORTERADE_TAL[0] = 47;
-        OSORTERADE_TAL[1] = 89;
-        OSORTERADE_TAL[2] = 3;
         uppg03 = new Lab2Uppg03();
     }
 
-    @After
-    public void tearDown() throws Exception
+//    @After
+//    public void tearDown() throws Exception
+//    {
+//        uppg03 = null;
+//    }
+
+    /* Varje parameter placeras som argument här. När en runner körs så skickar
+     * den argumenten från parametrar definierade i testData()-metoden. */
+    public Lab2Uppg03Test(int[] TEST_DATA, int expected) {
+        this.TEST_DATA = TEST_DATA;
+        this.expected = expected;
+        System.out.println("expected = " + expected);
+    }
+
+    /* Testdata på formen:
+     * 
+     *          { new int[] { 1, 3, 2 }, 2 }
+     *                        |  |  |    |
+     *                        |  |  |    +--- rätt svar
+     *                        +--+--+-------- skickas till metoden under test
+     */
+    @Parameterized.Parameters
+    public static Collection<Object[]> testData()
     {
-        uppg03 = null;
+        return Arrays.asList(new Object[][] { 
+                { new int[] { 1, 3, 2 }, 2 },
+                { new int[] { 3, 2, 1 }, 2 }, 
+                { new int[] { 1, 2, 3 }, 2 },
+                { new int[] { 1, 1, 1 }, 2 }, 
+                { new int[] { 1, 0, 0 }, 1 },
+                { new int[] { 0, 0, 0 }, 0 } });
     }
 
     @Test
     public void testMellerstaTalet()
     {
-        assertEquals(47, uppg03.mellerstaTalet(OSORTERADE_TAL));
+        actual = uppg03.mellerstaTalet(TEST_DATA);
+//        assertEquals(47, uppg03.mellerstaTalet(OSORTERADE_TAL));
+        assertEquals(expected, actual);
     }
 
 }
