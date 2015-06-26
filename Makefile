@@ -1,16 +1,26 @@
-FILE_NAME=DV017A_lab2
+NAME=DV017A_lab2
 TEX_PATH=tex
-OUTPUT_PATH=build
+OUT_PATH=build
 TEX=pdflatex
 BIBTEX=bibtex
 TEX_FLAGS=-synctex=1 -interaction=nonstopmode -shell-escape -file-line-error 
-LATEX_CMD=$(TEX) $(TEX_FLAGS) --output-directory=$(OUTPUT_PATH)
+LATEX_CMD=$(TEX) $(TEX_FLAGS) --output-directory=$(OUT_PATH)
+
+sources = DV017A_lab2.tex intro.tex resultat.tex uppg01.tex
 
 default: pdf
 
 
-pdf: 
-	$(LATEX_CMD) $(TEX_PATH)/$(FILE_NAME).tex
+pdf: $(OUT_PATH)/$(NAME).pdf
+
+all: pdf
+
+$(OUT_PATH)/$(NAME).pdf: $(TEX_PATH)/$(NAME).tex
+	$(LATEX_CMD) $(TEX_PATH)/$(NAME).tex
+	$(BIBTEX) $(TEX_PATH)/$(NAME)
+	$(LATEX_CMD) $(TEX_PATH)/$(NAME).tex
+	$(LATEX_CMD) $(TEX_PATH)/$(NAME).tex
+
 
 #all: $(FILE_NAME).pdf
 ##	$(LATEX_CMD)
@@ -18,22 +28,15 @@ pdf:
 ##	$(BUILDTEX)
 ##	$(BUILDTEX)
 
-$(FILE_NAME).pdf: $(FILE_NAME).tex
-	$(LATEX_CMD) $(FILE_NAME)
-	$(LATEX_CMD) $(FILE_NAME)
-	$(BIBTEX) $(FILE_NAME)
-	$(LATEX_CMD) $(FILE_NAME)
-	$(LATEX_CMD) $(FILE_NAME)
-
 view:
-	xdg-open $(OUTPUT_PATH)/$(FILE_NAME).pdf &
+	xdg-open $(OUT_PATH)/$(NAME).pdf &
 
 
 ##.PHONY: clean
 ##clean:
-##	    rm -f *.log *.bak *.aux *.bbl *.blg *.idx *.toc *.out
+##	    \rm -f *.log *.bak *.aux *.bbl *.blg *.idx *.toc *.out
 ##
 ##.PHONY: clean-all
 ##clean-all:
-##	    rm -f *.dvi *.log *.bak *.aux *.bbl *.blg *.idx *.ps *.eps *.pdf *.toc *.out
+##	    \rm -f *.dvi *.log *.bak *.aux *.bbl *.blg *.idx *.ps *.eps *.pdf *.toc *.out
 ##
