@@ -1,4 +1,3 @@
-package main;
 /**
  *  DV017A :: Grundläggande programmering i Java
  *  860224 Jonas Sjöberg
@@ -8,6 +7,8 @@ package main;
  *  Labb #2
  *  
  */
+
+package main;
 
 import java.util.Scanner;
 

@@ -27,6 +27,9 @@ public class Lab2Uppg01
       //@formatter:off
         UserInputFilter filter = new UserInputFilter();
 
+        int jhdfghjk = djkfg234;
+        jdfg sdf;
+
         int sekunder = filter.getPositiveInt(QUERY);
         int minuter  = numberOfMinutesForSeconds(sekunder);
         int timmar   = numberOfHoursForMinutes(minuter);

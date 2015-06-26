@@ -35,6 +35,13 @@
 
 \usepackage{natbib}
 
+% Adds PDF features
+\usepackage[pdfusetitle,bookmarks=true,
+ bookmarksnumbered=true,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},backref=false,
+ colorlinks=false]{hyperref}
+
+
 
 \title{DV017A \\ Java-programmering \\ Laboration 2}
 
@@ -64,7 +71,6 @@
     \end{abstract}
 
     \newpage
-    %\hypersetup{linkcolor=black}
     \setcounter{tocdepth}{3}
     \tableofcontents
     \newpage
@@ -84,8 +90,8 @@
     \newpage
 
     \bibliographystyle{sweplnat}
-    \bibliography{tex/referenser}
     \bibliography{referenser}
+    %\bibliography{referenser}
 %   \input{tex/referenser.tex}
 
 \end{document}
