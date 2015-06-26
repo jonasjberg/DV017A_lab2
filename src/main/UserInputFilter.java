@@ -58,21 +58,13 @@ public class UserInputFilter
         String token = "";
         
         do {
-            token = scan.nextLine().trim();
             queryUser(msg);
+            token = scan.nextLine().trim().toLowerCase();
 
-            if (token.equalsIgnoreCase("j")) {
-                System.out.println("j");
-                return true; 
+            if      (token.equals("j"))  return true; 
+            else if (token.equals("n")) return false;
+            else                          { /* ? */ }
 
-            } else if (token.equalsIgnoreCase("n")) {
-                System.out.println("n");
-                return false;
-            } else {
-               
-            }
-        } while (scan.hasNextLine());
-        
-        return false;
+        } while (true);
     }
 }

@@ -12,60 +12,81 @@ import java.util.Random;
 
 public class Lab2Uppg04
 {
-    private final static int RANGE_MIN = 1;
-    private final static int RANGE_MAX = 10;
+    /* Gissa ett tal mellan RANGE_MIN och RANGE_MAX. */
+    private final static int    RANGE_MIN   = 1;
+    private final static int    RANGE_MAX   = 10;
 
-    private static int rightAnswer;
-    private static int noGuesses       = 0;
-    private static boolean hasWon = false;
+    private static int          rightAnswer;
+    private static int          noGuesses   = 0;
+    private static boolean      hasWon      = false;
 
-    private final static String MSG_PROMPT = "gissa\\> ";
-    private final static String MSG_WIN = "Rätt gissat! Du har gissat ";
+    /* Meddelanden till spelaren. */
+    private final static String MSG_PROMPT  = "gissa\\> ";
+    private final static String MSG_WIN     = "Rätt gissat! Du har gissat ";
     private final static String MSG_TOOLOW  = "Du har gissat för lågt!";
     private final static String MSG_TOOHIGH = "Du har gissat för högt!";
-    private final static String MSG_AGAIN = "Spela en gång till (j/n): ";
+    private final static String MSG_AGAIN   = "Spela en gång till (j/n): ";
 
     public static void main(String[] args)
     {
-        int guess;
-        rightAnswer = getRandNumber(RANGE_MIN, RANGE_MAX);
-
+        rightAnswer = getRandomNumber(RANGE_MIN, RANGE_MAX);
         printWelcome();
+
         do {
-            guess = getGuess(MSG_PROMPT);
+            int guess = getGuess(MSG_PROMPT);
             noGuesses++;
 
             hasWon = checkGuess(guess, rightAnswer);
-            
+
             if (hasWon) {
-                if (!keepPlaying()) {
-                   System.exit(0);
-                }
+                if (!keepPlaying()) System.exit(0);
             }
-            
+
         } while (!hasWon);
     }
-    
+
+    /**
+     * Skriver ut ett välkomstmeddelande.
+     */
     public static void printWelcome()
     {
         System.out.println("Välkommen till gissa-talet spelet!");
-        System.out.println("Du ska gissa på ett tal mellan "
+        System.out.println("Du ska gissa på ett tal mellan " 
                            + RANGE_MIN + " och " + RANGE_MAX);
     }
-    
+
+    /**
+     * Hämtar en gissning från spelaren. Måste vara ett positivt heltal.
+     * @param prompt        skrivs ut då spelaren ombeds mata in gissning
+     * @return              ett positivt heltal
+     */
     public static int getGuess(String prompt)
     {
         UserInputFilter filter = new UserInputFilter();
         return filter.getPositiveInt(prompt);
     }
-    
-    public static int getRandNumber(int min, int max)
+
+    /**
+     * Genererar ett slumptal mellan 'min' och 'max'.
+     * @param min       talets lägsta möjliga värde
+     * @param max       talets högsta möjliga värde 
+     * @return          ett slumpmässigt heltal mellan 'min' och 'max'
+     */
+    public static int getRandomNumber(int min, int max)
     {
-       int range = Math.abs(max - min);
-       Random rng = new Random();
-       return rng.nextInt(range + 1) + 1;
+        int range  = Math.abs(max - min);
+        Random rng = new Random();
+        /* '(range + 1)' kompenserar för beräkningen av range. 
+         * rng.nextInt(100) ger ett tal mellan 0-99, därav en ytterligare '+1'.*/
+        return rng.nextInt(range + 1) + 1;
     }
-    
+
+    /**
+     * Undersök om det gissade talet är rätt svar.
+     * @param guess         gissat tal
+     * @param answer        rätt svar
+     * @return              sant om gissning stämmer, annars falskt
+     */
     public static boolean checkGuess(int guess, int answer)
     {
         if (guess == answer) {
@@ -81,12 +102,15 @@ public class Lab2Uppg04
             return false;
         }
     }
-    
+
+    /**
+     * Fråga om användaren vill fortsätta spela.
+     * @return      sant om spelet ska fortsätta
+     */
     public static boolean keepPlaying()
     {
-       UserInputFilter filter = new UserInputFilter();
-       boolean cont = filter.getYesNoAnswer(MSG_AGAIN);
-       return cont;
+        UserInputFilter filter = new UserInputFilter();
+        boolean cont = filter.getYesNoAnswer(MSG_AGAIN);
+        return cont;
     }
-
 }
