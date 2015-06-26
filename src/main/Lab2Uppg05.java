@@ -11,8 +11,6 @@ package main;
 
 public class Lab2Uppg05
 {
-    //    private static final char[] VOWELS = { 'a', 'e', 'i', 'o', 'u', 'y' };
-    private static final String QUERY = "Mata in strängen: ";
     private static int count_a = 0;
     private static int count_e = 0;
     private static int count_i = 0;
@@ -24,8 +22,10 @@ public class Lab2Uppg05
     {
         UserInputFilter filter = new UserInputFilter();
 
-        String text = filter.getString(QUERY);
+        String text = filter.getString("Mata in strängen: ");
 
+        /* Gå igenom textsträngen 'text' ett tecken i taget och gör jämförelsen
+         * i en switch-sats. Öka respektive räknare om tecknet matchar. */
         for (int i = 0; i < text.length(); i++) {
             switch (text.charAt(i)) {
             case 'a':
@@ -46,9 +46,12 @@ public class Lab2Uppg05
             case 'y':
                 count_y++;
                 break;
+            default:
+                break;
             }
         }
 
+        /* Skriv ut resultatet. */
         System.out.println("I strängen finns: " + count_a + " st a:n");
         System.out.println("                  " + count_e + " st e:n");
         System.out.println("                  " + count_i + " st i:n");
@@ -56,12 +59,4 @@ public class Lab2Uppg05
         System.out.println("                  " + count_u + " st u:n");
         System.out.println("                  " + count_y + " st y:n");
     }
-
-    //    Mata in strängen: *Du har min kursbok*
-    //    I strängen finns: 1 st a:n
-    //    0 st e:n
-    //    1 st i:n
-    //    1 st o:n
-    //    2 st u:n
-    //    0 st y:n
 }
