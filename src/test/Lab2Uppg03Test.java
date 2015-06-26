@@ -3,7 +3,7 @@
  * 860224 Jonas Sjöberg
  * Högskolan i Gävle
  * tel12jsg@student.hig.se
- * 
+ *
  * Labb #2    Uppgift 3 JUnit test
  */
 
@@ -17,15 +17,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 import org.junit.runner.RunWith;
 
 @RunWith(Parameterized.class)
 public class Lab2Uppg03Test
 {
-    private int TEST_DATA[]; // Uppsättning siffror att använda vid test
-    private int expected;    // "Rätt svar"
-    private int actual;      // Faktiskt svar vid testkörning
+    private int TEST_DATA[];        // Uppsättning siffror att använda vid test
+    private int expected;           // "Rätt svar"
+    private int actual;             // Faktiskt svar vid testkörning
     private Lab2Uppg03 uppg03;      // Objekt under test
 
     @Before
@@ -58,7 +57,7 @@ public class Lab2Uppg03Test
     @Parameterized.Parameters
     public static Collection<Object[]> testData()
     {
-        return Arrays.asList(new Object[][] { 
+        return Arrays.asList(new Object[][] {
                 { new int[] { 1  , 2   , 3    } , 2   }   ,
                 { new int[] { 3  , 2   , 1    } , 2   }   ,
                 { new int[] { 2  , 3   , 1    } , 2   }   ,
