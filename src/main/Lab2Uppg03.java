@@ -16,37 +16,15 @@ public class Lab2Uppg03
     public static void main(String[] args)
     {
         UserInputFilter filter = new UserInputFilter(); 
-        int index = 1;
         
-        for (int tal : heltal) {
-            tal = filter.getPositiveInt("Mata in heltal #" + index++ + ": ");
+        for (int i = 0; i < heltal.length; i++) {
+            heltal[i] = filter.getPositiveInt("Mata in heltal #" + (i + 1) + ": ");
         }
-
         
+        System.out.println("Det mellersta talet är " + mellerstaTalet(heltal));
     }
-
     
-//    public int mellerstaTalet(int[] tal)
-//    {
-//        int A = tal[0];
-//        int B = tal[1];
-//        int C = tal[2];
-//        System.out.println("A = " + A);
-//        System.out.println("B = " + B);
-//        System.out.println("C = " + C);
-//        
-//        if (B > A) {
-//            System.out.println("B > A");
-//            if (C < A) return A;
-//            else       return B;
-//        } else {
-//            System.out.println("!(B > A)");
-//            if (A < B) return B;
-//            else       return C;
-//        }
-//    }
-    
-    public int mellerstaTalet(int[] tal)
+    public static int mellerstaTalet(int[] tal)
     {
         int A = tal[0];
         int B = tal[1];
@@ -54,9 +32,24 @@ public class Lab2Uppg03
         System.out.println("A = " + A);
         System.out.println("B = " + B);
         System.out.println("C = " + C);
-
-        
-
+       
+        if (A > B) {
+            if (B > C) {
+                return B;
+            } else if (A > C){
+                return C;
+            } else {
+                return A;
+            }
+        } else {
+            if (A > C) {
+                return A;
+            } else if (B > C) {
+                return C;
+            } else {
+                return B;
+            }
+        }
     }
     // Skriv in första talet: *7*¬
     // Skriv in andra talet: *10*¬

@@ -13,12 +13,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-@formatter:off
+//@formatter:off
 @RunWith(Suite.class)
 @SuiteClasses ({ 
                     Lab2Uppg03Test.class 
               })
-@formatter:on
+//@formatter:on
 
 public class AllTests
 {
