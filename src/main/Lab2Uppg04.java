@@ -26,11 +26,11 @@ public class Lab2Uppg04
     private final static String MSG_TOOLOW  = "Du har gissat för lågt!";
     private final static String MSG_TOOHIGH = "Du har gissat för högt!";
     private final static String MSG_AGAIN   = "Spela en gång till (j/n): ";
+    private final static String MSG_BYE     = "Adjö!";
 
     public static void main(String[] args)
     {
-        rightAnswer = getRandomNumber(RANGE_MIN, RANGE_MAX);
-        printWelcome();
+        resetGame();
 
         do {
             int guess = getGuess(MSG_PROMPT);
@@ -39,7 +39,12 @@ public class Lab2Uppg04
             hasWon = checkGuess(guess, rightAnswer);
 
             if (hasWon) {
-                if (!keepPlaying()) System.exit(0);
+                if (!keepPlaying()) {
+                    System.out.println(MSG_BYE);
+                    System.exit(0);
+                } else {
+                    resetGame();
+                }
             }
 
         } while (!hasWon);
@@ -50,8 +55,9 @@ public class Lab2Uppg04
      */
     public static void printWelcome()
     {
+        System.out.println("----------------------------------");
         System.out.println("Välkommen till gissa-talet spelet!");
-        System.out.println("Du ska gissa på ett tal mellan " 
+        System.out.println("Du ska gissa på ett tal mellan "
                            + RANGE_MIN + " och " + RANGE_MAX);
     }
 
@@ -69,16 +75,17 @@ public class Lab2Uppg04
     /**
      * Genererar ett slumptal mellan 'min' och 'max'.
      * @param min       talets lägsta möjliga värde
-     * @param max       talets högsta möjliga värde 
+     * @param max       talets högsta möjliga värde
      * @return          ett slumpmässigt heltal mellan 'min' och 'max'
      */
     public static int getRandomNumber(int min, int max)
     {
-        int range  = Math.abs(max - min);
+        int range  = Math.abs(((max - min) + 1) + min);
         Random rng = new Random();
-        /* '(range + 1)' kompenserar för beräkningen av range. 
+        /* '(range + 1)' kompenserar för beräkningen av range.
          * rng.nextInt(100) ger ett tal mellan 0-99, därav en ytterligare '+1'.*/
-        return rng.nextInt(range + 1) + 1;
+        System.out.println("rng = " + rng.nextInt(range));
+        return rng.nextInt(range);
     }
 
     /**
@@ -112,5 +119,16 @@ public class Lab2Uppg04
         UserInputFilter filter = new UserInputFilter();
         boolean cont = filter.getYesNoAnswer(MSG_AGAIN);
         return cont;
+    }
+
+    /**
+     * Nollställer variabler och startar en ny spelomgång.
+     */
+    public static void resetGame()
+    {
+        hasWon = false;
+        noGuesses = 0;
+        rightAnswer = getRandomNumber(RANGE_MIN, RANGE_MAX);
+        printWelcome();
     }
 }
