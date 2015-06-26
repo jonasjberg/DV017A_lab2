@@ -14,17 +14,13 @@ import java.util.Scanner;
 
 public class UserInputFilter
 {
-
-    public static void main(String[] args) {
-        System.exit(0);
-    }
-
     /**
      * Hämta positivt heltal från användaren.
      * @param msg   meddelande vid förfrågan
      * @return      ett positivt heltal
      */
-    public int getPositiveInt(String msg) {
+    public int getPositiveInt(String msg) 
+    {
         @SuppressWarnings("resource")
         Scanner scan = new Scanner(System.in);
 
@@ -49,7 +45,34 @@ public class UserInputFilter
      * Skriv ut meddelande till användaren.
      * @param msg   meddelande att skriva ut
      */
-    private static void queryUser(String msg) {
+    private static void queryUser(String msg)
+    {
         if (msg != null) System.out.print(msg);
+    }
+    
+    public boolean getYesNoAnswer(String msg)
+    {
+        @SuppressWarnings("resource")
+        Scanner scan = new Scanner(System.in); 
+        
+        String token = "";
+        
+        do {
+            token = scan.nextLine().trim();
+            queryUser(msg);
+
+            if (token.equalsIgnoreCase("j")) {
+                System.out.println("j");
+                return true; 
+
+            } else if (token.equalsIgnoreCase("n")) {
+                System.out.println("n");
+                return false;
+            } else {
+               
+            }
+        } while (scan.hasNextLine());
+        
+        return false;
     }
 }
