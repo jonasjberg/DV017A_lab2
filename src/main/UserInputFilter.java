@@ -5,7 +5,7 @@
  *  tel12jsg@student.hig.se
  *
  *  Labb #2
- *  
+ *
  */
 
 package main;
@@ -18,7 +18,7 @@ public class UserInputFilter
     public static void main(String[] args) {
         System.exit(0);
     }
-    
+
     /**
      * Hämta positivt heltal från användaren.
      * @param msg   meddelande vid förfrågan
@@ -43,8 +43,8 @@ public class UserInputFilter
         } while (vetInt <= 0);
 
         return vetInt;
-    } 
-    
+    }
+
     /**
      * Skriv ut meddelande till användaren.
      * @param msg   meddelande att skriva ut
@@ -53,8 +53,3 @@ public class UserInputFilter
         if (msg != null) System.out.print(msg);
     }
 }
-
-
-
-
-    
