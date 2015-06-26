@@ -14,16 +14,21 @@ import java.util.Scanner;
 
 public class UserInputFilter
 {
+    Scanner scan;
+    
+    /* Konstruktor skapar Scanner-objekt */
+    public UserInputFilter()
+    {
+        scan = new Scanner(System.in);
+    }
+
     /**
      * Hämta positivt heltal från användaren.
      * @param msg   meddelande vid förfrågan
      * @return      ett positivt heltal
      */
-    public int getPositiveInt(String msg) 
+    public int getPositiveInt(String msg)
     {
-        @SuppressWarnings("resource")
-        Scanner scan = new Scanner(System.in);
-
         int vetInt = 0;
 
         do {
@@ -34,7 +39,7 @@ public class UserInputFilter
                 scan.next();
             }
 
-           vetInt = scan.nextInt();
+            vetInt = scan.nextInt();
 
         } while (vetInt <= 0);
 
@@ -49,22 +54,38 @@ public class UserInputFilter
     {
         if (msg != null) System.out.print(msg);
     }
-    
+
+    /**
+     * Ställer en ja/nej fråga och väntar på att användaren svarar 'j' eller 'n'
+     * @param msg   meddelande att skriva ut
+     * @return      sant om svaret är 'j', falskt om svaret är 'n'
+     */
     public boolean getYesNoAnswer(String msg)
     {
-        @SuppressWarnings("resource")
-        Scanner scan = new Scanner(System.in); 
-        
         String token = "";
-        
+
         do {
             queryUser(msg);
             token = scan.nextLine().trim().toLowerCase();
 
-            if      (token.equals("j"))  return true; 
-            else if (token.equals("n")) return false;
-            else                          { /* ? */ }
+            if (token.equals("j"))
+                return true;
+            else if (token.equals("n"))
+                return false;
+            else { /* ? */}
 
         } while (true);
+    }
+
+    /**
+     * Hämtar en textsträng från användaren.
+     * @param msg   meddeleande att skriva ut
+     * @return      en textsträng
+     */
+    public String getString(String msg)
+    {
+        queryUser(msg);
+        String s = scan.nextLine();
+        return s;
     }
 }

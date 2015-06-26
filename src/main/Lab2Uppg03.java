@@ -4,7 +4,7 @@
  * Högskolan i Gävle
  * tel12jsg@student.hig.se
  *
- * Labb #2 Uppgift 3
+ * Labb #2    Uppgift 3
  */
 
 package main;
