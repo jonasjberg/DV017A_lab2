@@ -41,7 +41,27 @@
  breaklinks=false,pdfborder={0 0 0},backref=false,
  colorlinks=false]{hyperref}
 
-
+\newmintedfile[javacode]{java}{
+%bgcolor=mintedbackground,
+%fontfamily=tt,
+fontsize=\footnotesize,
+linenos=true,
+numberblanklines=true,
+numbersep=12pt,
+numbersep=5pt,
+%gobble=0,
+frame=lines,
+%framerule=0.4pt,
+framesep=2mm,
+funcnamehighlighting=true,
+tabsize=4,
+obeytabs=false,
+mathescape=false
+samepage=false, %with this setting you can force the list to appear on the same page
+showspaces=false,
+showtabs =false,
+texcl=false,
+}
 
 \title{DV017A \\ Java-programmering \\ Laboration 2}
 
@@ -75,17 +95,17 @@
     \tableofcontents
     \newpage
 
-    \input{tex/intro.tex}
-    \input{tex/uppg01.tex}
-%   \input{tex/uppg02.tex}
-%   \input{tex/uppg03.tex}
-%   \input{tex/uppg04.tex}
-%   \input{tex/uppg05.tex}
-%   \input{tex/uppg06.tex}
+%    \input{tex/intro}
+    \input{tex/uppg01}
+    \input{tex/uppg02}
+    \input{tex/uppg03.tex}
+    \input{tex/uppg04.tex}
+    \input{tex/uppg05.tex}
+    \input{tex/uppg06.tex}
 %   \input{tex/uppg07.tex}
 %   \input{tex/uppg08.tex}
 %   \input{tex/uppg09.tex}
-    \input{tex/resultat.tex}
+    %\input{tex/resultat}
 
     \newpage
 

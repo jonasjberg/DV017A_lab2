@@ -1,7 +1,29 @@
 \section{Uppgift 4}\label{sec:uppg04}
 
 \subsection{Instruktioner}
-% TODO: Lägg till instruktioner för #04.
+\begin{verbatim}
+4. Skriv programmet som spelar det klassiska gissa-talet spelet.  Programmet
+   ska först slumpa ut ett tal mellan 1 och 100. Detta tal ska den som spelar
+   klura ut. Om man gissat för lågt eller för högt så ska "Du har gissat för
+   lågt!" resp "Du har gissat för högt!" skrivas ut på skärmen. Man ska få
+   fortsätta gissa tills man gissat rätt, "Rätt gissat!" skrivs då ut. Även
+   antal gissningar ska skrivas ut. Varje gång man gissat rätt ska man få välja
+   om man vill spela spelet igen eller avsluta.
+   Så här kan exempelvis en körning se ut:
+
+        Välkommen till gissa-talet spelet!
+        Du ska gissa på ett tal mellan 1 och 100
+        gissa\> *75*
+        Du har gissat för högt!
+        gissa\> *35*
+        Du har gissat för lågt!
+        gissa\> *60*
+        Du har gissat för högt!
+        gissa\> *40*
+        Rätt gissat! Du har gissat 4 gånger.
+        Spela en gång till (j/n): *n*
+        Adjö!
+\end{verbatim}
 
 
 \subsection{Lösning}
@@ -13,17 +35,17 @@
 
 
 \subsubsection{Källkod}
-\inputminted[linenos]{java}{src/Lab2Uppg04.java}
-\caption{Lab2Uppg04.java}
+%\inputminted[linenos]{java}{src/main/Lab2Uppg04.java}
+\javacode{src/main/Lab2Uppg04.java}
+%\caption{Lab2Uppg04.java}
 \label{src:uppg04}
-% TODO: Lägg till källkod för #04.
 
 
 \subsubsection{Skärmdump}
 \begin{figure}[htbp]
     \centering
         \includegraphics[width=\linewidth]{img/04.png}
-    \caption{Körning av koden till Uppgift \ref{sec:uppg04}}
+    \caption{Körning av koden till Uppgift~\ref{sec:uppg04}}
     \label{fig:uppg04-screenshot}
 \end{figure}
 % TODO: Lägg till skärmdump av #04.
