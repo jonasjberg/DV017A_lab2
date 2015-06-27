@@ -30,7 +30,7 @@ public class Person
         this.adress = adress;
         this.alder = alder;
     }
-    
+
     /**
      * Byter namn på personen.
      * @param namn  personens nya namn
@@ -39,7 +39,7 @@ public class Person
     {
         this.namn = namn;
     }
-    
+
     /**
      * Ändrar personens adress.
      * @param adress    personens nya adress
@@ -48,7 +48,7 @@ public class Person
     {
         this.adress = adress;
     }
-    
+
     /**
      * Gör personen ett år äldre.
      */
@@ -56,7 +56,7 @@ public class Person
     {
         alder++;
     }
-    
+
     /**
      * Hämta personens namn
      * @return      personens namn
@@ -65,7 +65,7 @@ public class Person
     {
         return namn;
     }
-    
+
     /**
      * Hämta personens personnummer
      * @return      personens personnummer
@@ -74,7 +74,7 @@ public class Person
     {
         return personnummer;
     }
-    
+
     /**
      * Hämta personens ålder
      * @return      personens ålder
@@ -83,7 +83,7 @@ public class Person
     {
         return alder;
     }
-    
+
     /**
      * Hämta personens adress
      * @return      personens adress
@@ -92,7 +92,7 @@ public class Person
     {
         return adress;
     }
-    
+
     /**
      * Returnerar objektets data i "human-readable" format
      */

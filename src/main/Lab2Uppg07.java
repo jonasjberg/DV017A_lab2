@@ -22,7 +22,7 @@ public class Lab2Uppg07
         number = filter.getPositiveInt("Mata in ett positivt heltal: ");
         System.out.println(isPrimeNumber(number) ? MSG_ISPRIME : MSG_NOTPRIME);
     }
-    
+
     /**
      * Undersöker om talet 'n' är ett primtal eller ej.
      * @param n     talet att undersöka
@@ -33,7 +33,7 @@ public class Lab2Uppg07
        for (int i = 2; i < n; i++ ) {
           if (n % i == 0)  return false;
        }
-       
+
        return true;
     }
 

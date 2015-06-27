@@ -21,6 +21,7 @@ public class UserInputFilter
      */
     public int getPositiveInt(String msg)
     {
+        @SuppressWarnings("resource")
         Scanner scan = new Scanner(System.in);
         int vetInt = 0;
 
@@ -46,6 +47,7 @@ public class UserInputFilter
      */
     public long getPositiveLong(String msg)
     {
+        @SuppressWarnings("resource")
         Scanner scan = new Scanner(System.in);
         long john = 0;
 
@@ -62,8 +64,8 @@ public class UserInputFilter
         } while (john <= 0);
 
         return john;
-    } 
-    
+    }
+
     /**
      * Skriv ut meddelande till användaren.
      * @param msg   meddelande att skriva ut
@@ -80,6 +82,7 @@ public class UserInputFilter
      */
     public boolean getYesNoAnswer(String msg)
     {
+        @SuppressWarnings("resource")
         Scanner scan = new Scanner(System.in);
         String token = "";
 
@@ -102,6 +105,7 @@ public class UserInputFilter
      */
     public String getString(String msg)
     {
+        @SuppressWarnings("resource")
         Scanner scan = new Scanner(System.in);
         String s = null;
 
@@ -109,7 +113,7 @@ public class UserInputFilter
             queryUser(msg);
             s = scan.nextLine();
         } while (s == null);
-        
+
         return s;
     }
 }

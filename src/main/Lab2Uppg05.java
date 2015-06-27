@@ -19,7 +19,7 @@ public class Lab2Uppg05
         String text = filter.getString("Skriv in den sträng du vill leta i: ");
         /* Saknar skydd mot att användaren matar in annat än en bokstav. */
         char ch = filter.getString("Vilken bokstav vill du räkna: ").charAt(0);
-        
+
         int chCount = 0;
 
         /* Gå igenom textsträngen 'text' ett tecken i taget och jämför tecknet
