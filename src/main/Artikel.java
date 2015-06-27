@@ -25,25 +25,7 @@ public class Artikel
        this.lagerantal = lagerantal;
        this.pris = pris;
 
-       okaAntalArtiklar();
-    }
-    
-    /**
-     * Ökar räknaren totArtiklar med 'antal'.
-     * @param antal     öka med detta antal artiklar
-     */
-    private static void okaTotaltAntalArtiklar(int antal)
-    {
-        totArtiklar += antal;
-    }
-    
-    /**
-     * Minskar räknaren totArtiklar med 'antal'.
-     * @param antal     minska med detta antal artiklar
-     */
-    private static void minskaTotaltAntalArtiklar(int antal)
-    {
-        totArtiklar -= antal;
+       totArtiklar++;
     }
     
     public void andraNamn(String artikelnamn)
@@ -59,13 +41,11 @@ public class Artikel
     public void saljaArtikel(int antal)
     {
         lagerantal -= antal;
-        minskaTotaltAntalArtiklar(antal);
     }
     
     public void fyllaLagret(int antal)
     {
         lagerantal += antal;
-        okaTotaltAntalArtiklar(antal);
     }
     
     public void andraPris(double pris)
@@ -85,7 +65,11 @@ public class Artikel
     
     public void skrivInfo()
     {
-        prompt("Artikel")
+        prompt ("\nArtikelInfo\n-----------"
+                + "\nArtikelnummer: " + artikelnr
+                + "\nArtikelnamn:   " + artikelnamn
+                + "\nLagerantal:    " + lagerantal
+                + "\nPris:          " + pris);
     }
     
     /**
