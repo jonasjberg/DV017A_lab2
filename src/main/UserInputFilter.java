@@ -14,14 +14,6 @@ import java.util.Scanner;
 
 public class UserInputFilter
 {
-    Scanner scan;
-    
-    /* Konstruktor skapar Scanner-objekt */
-    public UserInputFilter()
-    {
-        scan = new Scanner(System.in);
-    }
-
     /**
      * Hämta positivt heltal från användaren.
      * @param msg   meddelande vid förfrågan
@@ -29,6 +21,7 @@ public class UserInputFilter
      */
     public int getPositiveInt(String msg)
     {
+        Scanner scan = new Scanner(System.in);
         int vetInt = 0;
 
         do {
@@ -47,6 +40,31 @@ public class UserInputFilter
     }
 
     /**
+     * Hämta positivt heltal av typ "long" från användaren.
+     * @param msg   meddelande vid förfrågan
+     * @return      ett positivt heltal
+     */
+    public long getPositiveLong(String msg)
+    {
+        Scanner scan = new Scanner(System.in);
+        long john = 0;
+
+        do {
+            queryUser(msg);
+
+            while (!scan.hasNextLong()) {
+                queryUser(msg);
+                scan.next();
+            }
+
+            john = scan.nextLong();
+
+        } while (john <= 0);
+
+        return john;
+    } 
+    
+    /**
      * Skriv ut meddelande till användaren.
      * @param msg   meddelande att skriva ut
      */
@@ -62,18 +80,18 @@ public class UserInputFilter
      */
     public boolean getYesNoAnswer(String msg)
     {
+        Scanner scan = new Scanner(System.in);
         String token = "";
 
         do {
             queryUser(msg);
             token = scan.nextLine().trim().toLowerCase();
 
-            if (token.equals("j"))
+            if (token.equals("j")) {
                 return true;
-            else if (token.equals("n"))
+            } else if (token.equals("n")) {
                 return false;
-            else { /* ? */}
-
+            }
         } while (true);
     }
 
@@ -84,8 +102,14 @@ public class UserInputFilter
      */
     public String getString(String msg)
     {
-        queryUser(msg);
-        String s = scan.nextLine();
+        Scanner scan = new Scanner(System.in);
+        String s = null;
+
+        do {
+            queryUser(msg);
+            s = scan.nextLine();
+        } while (s == null);
+        
         return s;
     }
 }
