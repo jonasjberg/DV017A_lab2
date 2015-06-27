@@ -15,19 +15,25 @@ public class Lab2Uppg08
     {
         UserInputFilter filter = new UserInputFilter();
 
+        /* Skapa nya 'Person'-objekt. */
         prompt("Ange startvärden för \"person1\": ");
         Person person1 = createNewPerson();
         prompt("Ange startvärden för \"person2\": ");
         Person person2 = createNewPerson();
 
-        prompt("person1\n-------" + person1.toString());
-        prompt("person2\n-------" + person2.toString());
+        /* Skriv ut information om 'Person'-objekten. */
+        prompt("\nperson1\n-------" + person1.toString());
+        prompt(  "person2\n-------" + person2.toString());
 
+        /* Modifiera 'person1'. */
         person1.byterNamn(filter.getString("Ange nytt namn för person1: "));
         person1.byterAdress(filter.getString("Ange ny adress för person1: "));
 
+        /* Låt 'person2' fylla år. */
         prompt("\n** person2 fyller år!\n");
+        person2.fyllerAr();
 
+        /* Skriv ut information om 'Person'-objekten. */
         // Använder '\n' newlines trots att det inte är särskilt portabelt ..
         prompt ("\nperson1\n-------"
               + "\nNamn:         " + person1.hamtaNamn()

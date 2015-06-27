@@ -1,0 +1,99 @@
+/**
+ *  DV017A :: Grundläggande programmering i Java
+ *  860224 Jonas Sjöberg
+ *  Högskolan i Gävle
+ *  tel12jsg@student.hig.se
+ *
+ *  Labb #2    Uppgift 9
+ */
+
+package main;
+
+public class Artikel
+{
+    private static int totArtiklar = 0;
+    
+    private int artikelnr;
+    private String artikelnamn;
+    private int lagerantal;
+    private double pris;
+    
+    public Artikel(int artikelnr, String artikelnamn, int lagerantal, double pris)
+    {
+       this.artikelnr = artikelnr;
+       this.artikelnamn = artikelnamn;
+       this.lagerantal = lagerantal;
+       this.pris = pris;
+
+       okaAntalArtiklar();
+    }
+    
+    /**
+     * Ökar räknaren totArtiklar med 'antal'.
+     * @param antal     öka med detta antal artiklar
+     */
+    private static void okaTotaltAntalArtiklar(int antal)
+    {
+        totArtiklar += antal;
+    }
+    
+    /**
+     * Minskar räknaren totArtiklar med 'antal'.
+     * @param antal     minska med detta antal artiklar
+     */
+    private static void minskaTotaltAntalArtiklar(int antal)
+    {
+        totArtiklar -= antal;
+    }
+    
+    public void andraNamn(String artikelnamn)
+    {
+        this.artikelnamn = artikelnamn;
+    }
+    
+    public String hamtaNamn()
+    {
+        return artikelnamn;
+    }
+    
+    public void saljaArtikel(int antal)
+    {
+        lagerantal -= antal;
+        minskaTotaltAntalArtiklar(antal);
+    }
+    
+    public void fyllaLagret(int antal)
+    {
+        lagerantal += antal;
+        okaTotaltAntalArtiklar(antal);
+    }
+    
+    public void andraPris(double pris)
+    {
+        this.pris = pris;
+    }
+    
+    public double hamtaPris()
+    {
+        return pris;
+    }
+    
+    public int hamtaTotAntal()
+    {
+        return totArtiklar;
+    }
+    
+    public void skrivInfo()
+    {
+        prompt("Artikel")
+    }
+    
+    /**
+     * Wrapper runt System.out.println() för mindre skrivande.
+     * @param s     textsträng att skriva ut
+     */
+    public static void prompt(String s)
+    {
+        System.out.println(s);
+    }
+}
