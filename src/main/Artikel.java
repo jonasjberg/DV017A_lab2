@@ -30,7 +30,7 @@ public class Artikel
     
     public void andraNamn(String artikelnamn)
     {
-        this.artikelnamn = artikelnamn;
+        if (artikelnamn != null) this.artikelnamn = artikelnamn;
     }
     
     public String hamtaNamn()
@@ -40,7 +40,7 @@ public class Artikel
     
     public void saljaArtikel(int antal)
     {
-        lagerantal -= antal;
+        if (lagerantal - antal > 0) lagerantal -= antal;
     }
     
     public void fyllaLagret(int antal)
@@ -50,7 +50,7 @@ public class Artikel
     
     public void andraPris(double pris)
     {
-        this.pris = pris;
+        if (pris > 0) this.pris = pris;
     }
     
     public double hamtaPris()
@@ -58,7 +58,7 @@ public class Artikel
         return pris;
     }
     
-    public int hamtaTotAntal()
+    public static int hamtaTotAntal()
     {
         return totArtiklar;
     }
@@ -71,7 +71,7 @@ public class Artikel
                 + "\nLagerantal:    " + lagerantal
                 + "\nPris:          " + pris);
     }
-    
+
     /**
      * Wrapper runt System.out.println() för mindre skrivande.
      * @param s     textsträng att skriva ut
