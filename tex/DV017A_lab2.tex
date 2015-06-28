@@ -14,13 +14,14 @@
 % ==============================================================================
 
 \documentclass[11pt,a4paper]{article}
-
 \usepackage[utf8]{inputenc}
 \inputencoding{utf8}
 \usepackage[swedish]{babel}
+\usepackage[swedish]{isodate}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{fullpage}
+\usepackage{datetime}
 
 \usepackage{textcomp}
 \usepackage{url}
@@ -78,7 +79,7 @@ texcl=false,
 
     \begin{center}
     \begin{tabular}{l r}
-        Datum: & \date{}\\
+        Datum: & \today \par \\
         Kursansvarig lärare: & Atique Ullah
     \end{tabular}
     \end{center}
