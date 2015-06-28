@@ -47,7 +47,8 @@ public class Lab2Uppg08
     }
 
     /**
-     * Skapar ett nytt 'Person'-objekt. Användaren mata in samtliga startvärden.
+     * Skapar ett nytt 'Person'-objekt. 
+     * Användaren matar in samtliga startvärden.
      * @return      ett nytt 'Person'-objekt
      */
     public static Person createNewPerson()
@@ -63,7 +64,7 @@ public class Lab2Uppg08
     }
 
     /**
-     * Wrapper runt System.out.println() för mindre skrivande.
+     * "Wrapper" runt System.out.println() för mindre skrivande.
      * @param s     textsträng att skriva ut
      */
     public static void prompt(String s)
