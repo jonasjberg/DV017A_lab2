@@ -35,7 +35,6 @@
 
 \usepackage{natbib}
 
-% Adds PDF features
 \usepackage[pdfusetitle,bookmarks=true,
  bookmarksnumbered=true,bookmarksopen=false,
  breaklinks=false,pdfborder={0 0 0},backref=false,
@@ -57,7 +56,7 @@ funcnamehighlighting=true,
 tabsize=4,
 obeytabs=false,
 mathescape=false
-samepage=false, %with this setting you can force the list to appear on the same page
+samepage=false,
 showspaces=false,
 showtabs =false,
 texcl=false,
@@ -69,7 +68,6 @@ texcl=false,
   Jonas Sjöberg\\
   860224\\
   Högskolan i Gävle,\\
-  Elektronikingenjörsprogrammet,\\
   \texttt{tel12jsg@tudent.hig.se}
 }
 
@@ -80,14 +78,12 @@ texcl=false,
 
     \begin{center}
     \begin{tabular}{l r}
-        Datum: & Juni 2015 \\
+        Datum: & \date{}\\
         Kursansvarig lärare: & Atique Ullah
     \end{tabular}
     \end{center}
 
     \begin{abstract}
-        Laboration i DV017A --- Inledande programmering i Java.
-        %TODO: Utveckla abstrakt.
     \end{abstract}
 
     \newpage
@@ -95,23 +91,14 @@ texcl=false,
     \tableofcontents
     \newpage
 
-%    \input{tex/intro}
     \input{tex/uppg01}
     \input{tex/uppg02}
-    \input{tex/uppg03.tex}
-    \input{tex/uppg04.tex}
-    \input{tex/uppg05.tex}
-    \input{tex/uppg06.tex}
-    \input{tex/uppg07.tex}
-    \input{tex/uppg08.tex}
-    \input{tex/uppg09.tex}
-    %\input{tex/resultat}
-
-    \newpage
-
-    \bibliographystyle{sweplnat}
-    \bibliography{referenser}
-    %\bibliography{referenser}
-%   \input{tex/referenser.tex}
+    \input{tex/uppg03}
+    \input{tex/uppg04}
+    \input{tex/uppg05}
+    \input{tex/uppg06}
+    \input{tex/uppg07}
+    \input{tex/uppg08}
+    \input{tex/uppg09}
 
 \end{document}
