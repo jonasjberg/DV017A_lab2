@@ -47,7 +47,7 @@ public class Lab2Uppg08
     }
 
     /**
-     * Skapar ett nytt 'Person'-objekt. 
+     * Skapar ett nytt 'Person'-objekt.
      * Användaren matar in samtliga startvärden.
      * @return      ett nytt 'Person'-objekt
      */

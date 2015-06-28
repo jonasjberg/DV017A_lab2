@@ -14,16 +14,16 @@ public class Lab2Uppg09
     public static void main(String[] args)
     {
         UserInputFilter filter = new UserInputFilter();
-        Artikel a1 = createNewArtikel(); 
-        Artikel a2 = createNewArtikel(); 
-       
+        Artikel a1 = createNewArtikel();
+        Artikel a2 = createNewArtikel();
+
         a1.skrivInfo();
         a2.skrivInfo();
-       
+
         prompt("\n* Ändrar artikeln 'a1's namn ..");
         a1.andraNamn(filter.getString("Ange nytt artikelnamn: "));
         prompt("Artikeln 'a1' har nu namnet: " + a1.hamtaNamn());
-        
+
         prompt("\n* Säljer ett antal artiklar ..");
         a2.saljaArtikel(filter.getPositiveInt("Ange antal 'a1' att sälja: "));
         a2.saljaArtikel(filter.getPositiveInt("Ange antal 'a2' att sälja: "));
@@ -31,15 +31,15 @@ public class Lab2Uppg09
         prompt("\n* Ändrar pris på artiklar ..");
         a1.andraPris(filter.getPositiveInt("Ange nytt pris för 'a1': "));
         prompt("Artikeln 'a1's pris ändrat till " + a1.hamtaPris());
-        
+
         prompt("\n* Fyller lagret ..");
         a1.fyllaLagret(filter.getPositiveInt("Ange antal av artikel 'a1'"));
         a2.fyllaLagret(filter.getPositiveInt("Ange antal av artikel 'a2'"));
-        
+
         prompt("Totalt antal artiklar: " + Artikel.hamtaTotAntal());
         prompt("\n* Skapar ny artikel 'a3' ..");
         prompt("Totalt antal artiklar: " + Artikel.hamtaTotAntal());
-        
+
         a1.skrivInfo();
         a2.skrivInfo();
     }
@@ -60,7 +60,7 @@ public class Lab2Uppg09
 
         return new Artikel(artikelnr, artikelnamn, lagerantal, pris);
     }
-    
+
     /**
      * "Wrapper" runt System.out.println() för mindre skrivande.
      * @param s     textsträng att skriva ut

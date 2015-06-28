@@ -15,7 +15,7 @@ public class Lab2Uppg04
 {
     /* Gissa ett tal mellan RANGE_MIN och RANGE_MAX. */
     private final static int    RANGE_MIN   = 1;
-    private final static int    RANGE_MAX   = 10;
+    private final static int    RANGE_MAX   = 100;
 
     private static int          rightAnswer;
     private static int          noGuesses   = 0;
@@ -85,7 +85,6 @@ public class Lab2Uppg04
         Random rng = new Random();
         /* '(range + 1)' kompenserar för beräkningen av range.
          * rng.nextInt(100) ger ett tal mellan 0-99, därav en ytterligare '+1'.*/
-        System.out.println("rng = " + rng.nextInt(range));
         return rng.nextInt(range);
     }
 

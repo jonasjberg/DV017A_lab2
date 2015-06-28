@@ -12,12 +12,12 @@ package main;
 public class Artikel
 {
     private static int totArtiklar = 0;
-    
+
     private int artikelnr;
     private String artikelnamn;
     private int lagerantal;
     private double pris;
-    
+
     /**
      * Klass 'Artikel' representerar ett artikelslag.
      * @param artikelnr         artikelns artikelnummer
@@ -34,7 +34,7 @@ public class Artikel
 
        totArtiklar++;
     }
-    
+
     /**
      * Ändra artikelns namn.
      * @param artikelnamn   nytt namn
@@ -43,7 +43,7 @@ public class Artikel
     {
         if (artikelnamn != null) this.artikelnamn = artikelnamn;
     }
-    
+
     /**
      * Hämta artikelns namn.
      * @return      artikelns namn
@@ -52,7 +52,7 @@ public class Artikel
     {
         return artikelnamn;
     }
-    
+
     /**
      * Sälj 'antal' exemplar av artikel och minska lagerantalet.
      * @param antal     antal artiklar att sälja
@@ -61,7 +61,7 @@ public class Artikel
     {
         if (lagerantal - antal > 0) lagerantal -= antal;
     }
-    
+
     /**
      * Fyller lagret med 'antal' exemplar av artikeln.
      * @param antal     antal artiklar som placeras i lagret
@@ -70,7 +70,7 @@ public class Artikel
     {
         lagerantal += antal;
     }
-    
+
     /**
      * Ändrar artikelns pris.
      * @param pris      artikelns nya pris
@@ -79,7 +79,7 @@ public class Artikel
     {
         if (pris > 0) this.pris = pris;
     }
-    
+
     /**
      * Hämtar artikelns pris.
      * @return      artikelns pris
@@ -88,7 +88,7 @@ public class Artikel
     {
         return pris;
     }
-    
+
     /**
      * Hämtar totalt antal artiklar.
      * @return      totalt antal artiklar
@@ -97,7 +97,7 @@ public class Artikel
     {
         return totArtiklar;
     }
-    
+
     /**
      * Skriver ut information om artikeln likt toString().
      */
